@@ -1,0 +1,13 @@
+:- module even_check.
+:- interface.
+:- import_module io.
+
+:- pred main(io::di, io::uo) is det.
+
+:- implementation.
+:- import_module int.
+
+main(!IO) :-
+    X = 4,
+    (if X mod 2 = 0 then io.write_string("Even\n", !IO)
+    else io.write_string("Odd\n", !IO)).
